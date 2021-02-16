@@ -1,0 +1,49 @@
+Ext.data.validations.phoneMessage = 'Неправильный формат номера телефона';
+Ext.data.validations.phone=function(config,value){
+        var valid =false;
+        valid=value.length=== 9;// 7 цифр + 2 дефиса
+        valid=valid&&(value.split('-').length===3); //3 части номера, разделенные 2-мя дефисами
+        return valid;
+};
+Ext.define('User', {
+        extend: 'Ext.data.Model',
+        fields: [{
+            name: 'name',     
+            type: 'string'
+        },{
+            name: 'age',
+            type: 'int'
+        },{
+            name: 'phone',
+            type: 'string'
+        },{
+            name: 'gender',   
+            type: 'string'
+        },{
+            name: 'username', 
+            type: 'string'
+        }],
+        validations: [{
+            type: 'presence',  
+            field: 'age'
+            },{
+            type: 'length',    
+            field: 'name',     
+            min: 2
+            },{
+            type: 'inclusion', 
+            field: 'gender',   
+            list: ['М', 'Ж']
+            },{
+            type: 'exclusion', 
+            field: 'username', 
+            list: ['Admin', 'Operator']
+            },{
+            type: 'format',    
+            field: 'username', 
+            matcher: /([a-z]+)[0-9]{2,3}/
+            },{
+            type: 'phone',  
+            field: 'phone'
+            }]
+    });
