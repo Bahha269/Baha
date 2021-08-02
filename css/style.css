@@ -1,0 +1,117 @@
+@font-face {
+    font-family: "RotondaC";
+    src: url("../fonts/RotondaC_Regular.ttf");
+}
+
+.showing-enter-active {
+    transition: all .5s ease;
+}
+.showing-leave-active {
+    transition: all .3s ease;
+}
+.showing-enter,
+.showing-leave-to {
+    opacity: 0;
+    transform: translateY(10px);
+}
+.showing-enter-to,
+.showing-leave {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.showing_overlay-enter-active {
+    transition: all .5s ease;
+}
+.showing_overlay-leave-active {
+    transition: all .4s ease;
+}
+.showing_overlay-enter,
+.showing_overlay-leave-to {
+    opacity: 0;
+}
+.showing_overlay-enter-to,
+.showing_overlay-leave {
+    opacity: .4;
+}
+
+.feedback .feedback__btn {
+    background-color: #7DB945;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    max-width: 340px;
+    width: 90%;
+    height: 70px;
+    box-sizing: border-box;
+    font-family: 'RotondaC';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    display: block;
+    margin: 0 auto;
+}
+
+#overlay {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    opacity: .4;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    background-color: #000;
+}
+form#popup-form {
+    max-width: 350px;
+    width: 60%;
+    height: 180px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999999999;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+}
+form#popup-form .title {
+    font-family: 'RotondaC';
+    text-align: center;
+    margin: 10px 0 30px 0;
+}
+form#popup-form .popup-form__item {
+    padding: 5px 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+    margin: 10px 0;
+    width: 180px;
+}
+form#popup-form .popup-form__item.btn {
+    background-color: #7DB945;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    width: 100px;
+    height: 26px;
+    box-sizing: border-box;
+    font-family: 'RotondaC';
+    font-style: normal;
+    font-weight: bold;
+    font-size: 14px;
+}
+.success {
+    color: green;
+    text-align: center;
+    padding: 10px;
+}
+.error {
+    color: red;
+    text-align: center;
+    padding: 10px;
+}
